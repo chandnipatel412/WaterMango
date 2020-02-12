@@ -1,0 +1,25 @@
+﻿@*@model List<WaterMango.Models.PlantDetail>*@
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="alert alert-warning" role="alert" hidden></div>
+<div class="alert alert-danger" role="alert" hidden></div>
+<div class="table-responsive">
+    <div class="align-right">
+        <button type="button" class="btn btn-primary" id="btnWater">Water</button>
+        <button type="button" class="btn btn-danger" id="btnStop">Stop</button>
+    </div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col"><input type="checkbox" class="custom-control-input" id="all"></th>
+                <th scope="col">Plant</th>
+                <th scope="col">Status</th>
+                <th scope="col" hidden></th>
+            </tr>
+        </thead>
+        <tbody id="PlantDetails">
+        </tbody>
+    </table>
+</div>
