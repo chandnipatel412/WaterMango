@@ -82,7 +82,6 @@ $("#btnStop").click(function () {
 
 function CheckForWater() {
     var plants = "";
-    
     var today = new Date();
     $.each($("input[name=plantList]"), function () {
         var id = $(this).attr('id');
@@ -106,7 +105,6 @@ function CheckForWater() {
 }
 
 function NoNeedWater() {
-    debugger;
     var noneedwater = "";
     var today = new Date();
     $.each($("input[name=plantList]:checked"), function () {
@@ -114,7 +112,6 @@ function NoNeedWater() {
         var wateredtime = $("#lastUpdated_" + id).html();
         if (wateredtime != null && wateredtime != "") {
             var lastwatered = new Date(wateredtime);
-            debugger;
             var diffinSec = Math.abs(today - lastwatered) / 1000;
             if (diffinSec <= 30) {
                 noneedwater = noneedwater + "," + $("#plantName_" + id).html();
