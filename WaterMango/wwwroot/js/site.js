@@ -58,15 +58,17 @@ $("#btnWater").click(function () {
             $("#status" + id).html("Watering");
             selectedPlants = selectedPlants + "," + id;
         });
-        selectedPlants = selectedPlants.slice(1);
-        $("#btnStop").attr("disabled", false);
-        $("#btnWater").attr("disabled", true);
-        timeout = setTimeout(function () {
-            GetAll(selectedPlants, "Watered");
-            CheckForWater();
-            $("#btnWater").attr("disabled", false);
-            $("#btnStop").attr("disabled", true);
-        }, 10000);
+        if (selectedPlants != "") {
+            selectedPlants = selectedPlants.slice(1);
+            $("#btnStop").attr("disabled", false);
+            $("#btnWater").attr("disabled", true);
+            timeout = setTimeout(function () {
+                GetAll(selectedPlants, "Watered");
+                CheckForWater();
+                $("#btnWater").attr("disabled", false);
+                $("#btnStop").attr("disabled", true);
+            }, 10000);
+        }
     }
 });
 
